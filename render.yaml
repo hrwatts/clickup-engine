@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: clickup-execution-engine
+    runtime: python
+    plan: starter
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: sh -c 'uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}'
+    healthCheckPath: /healthz
+    envVars:
+      - key: CLICKUP_API_TOKEN
+        sync: false
+      - key: CLICKUP_LIST_ID
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: APP_SHARED_SECRET
+        sync: false
+      - key: SESSION_SECRET
+        sync: false

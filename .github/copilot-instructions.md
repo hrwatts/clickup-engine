@@ -1,0 +1,5 @@
+- Never claim a change is complete unless tests relevant to the changed files are named.
+- Prefer editing existing abstractions over introducing new frameworks.
+- Match existing code style and dependency choices unless explicitly instructed otherwise.
+- When uncertain, ask for the missing interface or point to the exact file that must be checked.
+- For any public API change, update tests and docs in the same change.
